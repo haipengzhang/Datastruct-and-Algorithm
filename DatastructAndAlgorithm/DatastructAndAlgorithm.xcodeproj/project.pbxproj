@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		38099306200C86F2000385A9 /* Heap.c in Sources */ = {isa = PBXBuildFile; fileRef = 38099305200C86F2000385A9 /* Heap.c */; };
+		38099309200CB945000385A9 /* PQueue.c in Sources */ = {isa = PBXBuildFile; fileRef = 38099308200CB945000385A9 /* PQueue.c */; };
 		7BC69991200915FC00D797AC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BC69990200915FC00D797AC /* main.m */; };
 		7BC699AE2009164F00D797AC /* BiTree.c in Sources */ = {isa = PBXBuildFile; fileRef = 7BC699972009164D00D797AC /* BiTree.c */; };
 		7BC699AF2009164F00D797AC /* traverse.c in Sources */ = {isa = PBXBuildFile; fileRef = 7BC699992009164D00D797AC /* traverse.c */; };
@@ -25,6 +26,8 @@
 /* Begin PBXFileReference section */
 		38099304200C86F2000385A9 /* Heap.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Heap.h; sourceTree = "<group>"; };
 		38099305200C86F2000385A9 /* Heap.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = Heap.c; sourceTree = "<group>"; };
+		38099307200CB945000385A9 /* PQueue.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PQueue.h; sourceTree = "<group>"; };
+		38099308200CB945000385A9 /* PQueue.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = PQueue.c; sourceTree = "<group>"; };
 		7BC6997E200915FC00D797AC /* DatastructAndAlgorithm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DatastructAndAlgorithm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7BC69990200915FC00D797AC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		7BC699972009164D00D797AC /* BiTree.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = BiTree.c; sourceTree = "<group>"; };
@@ -100,6 +103,8 @@
 				7BC699AA2009164F00D797AC /* BiSTree.c */,
 				38099304200C86F2000385A9 /* Heap.h */,
 				38099305200C86F2000385A9 /* Heap.c */,
+				38099307200CB945000385A9 /* PQueue.h */,
+				38099308200CB945000385A9 /* PQueue.c */,
 				7BC69990200915FC00D797AC /* main.m */,
 				7BC699982009164D00D797AC /* example */,
 				7BC699AB2009164F00D797AC /* Info.plist */,
@@ -185,6 +190,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				38099309200CB945000385A9 /* PQueue.c in Sources */,
 				7BC699B22009164F00D797AC /* Set.c in Sources */,
 				7BC699B42009164F00D797AC /* OHTbl.c in Sources */,
 				7BC699B82009164F00D797AC /* Queue.c in Sources */,
