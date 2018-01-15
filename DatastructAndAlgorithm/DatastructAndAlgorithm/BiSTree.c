@@ -10,7 +10,98 @@
 #include <string.h>
 
 /* rotate left */
+static void rotate_left(BiTreeNode **node)
+{
+    BiTreeNode *left, *grandchild;
+    AvlNode *dataNode = bitree_data(*node);
+    left = bitree_left(*node);
+    AvlNode *dataLeft = bitree_data(left);
+    
+    if (dataLeft->factor == AVL_LET_HEAVY) {
+        //如果左节点长度factor = +1，执行LL旋转
+        //根节点的左节点变成左节点的右节点
+        bitree_left(*node) = bitree_right(left);
+        //左节点的右节点变成根节点
+        bitree_right(left) = *node;
+        dataLeft->factor = AVL_BALANCED;
+        dataNode->factor = AVL_BALANCED;
+        *node = left;
+    } else {
+        //如果左节点长度factor = -1，执行LR旋转
+        //根节点的左节点指向孙子节点的左节点（新插入导致不平衡的节点）的左节点
+        grandchild = bitree_right(left);
+        bitree_right(left) = bitree_left(grandchild);
+        bitree_left(grandchild) = left;
+        bitree_left(*node) = bitree_right(grandchild);
+        bitree_right(grandchild) = *node;
+        
+        AvlNode *grandchildData = bitree_data(grandchild);
+        switch (grandchildData->factor) {
+            case AVL_LET_HEAVY:
+                dataNode->factor = AVL_RGT_HEAVY;
+                dataLeft->factor = AVL_BALANCED;
+                break;
+            case AVL_BALANCED:
+                dataNode->factor = AVL_BALANCED;
+                dataLeft->factor = AVL_BALANCED;
+                break;
+            case AVL_RGT_HEAVY:
+                dataNode->factor = AVL_BALANCED;
+                dataLeft->factor = AVL_LET_HEAVY;
+                break;
+            default:
+                break;
+        }
+        grandchildData->factor = AVL_BALANCED;
+        *node = grandchild;
+    }
+    return;
+}
+
 /* rotate right */
+static void rotate_right(BiTreeNode **node)
+{
+    BiTreeNode *right, *grandchild;
+    right = bitree_right(*node);
+    AvlNode *dataRightNode = bitree_data(right);
+    AvlNode *dataNode = bitree_data(*node);
+    if (dataRightNode->factor == AVL_RGT_HEAVY) {
+        /* Perform an RR rotation */
+        bitree_right(*node) = bitree_left(right);
+        bitree_left(right) = *node;
+        dataRightNode->factor = AVL_BALANCED;
+        dataNode->factor = AVL_BALANCED;
+        *node = right;
+    } else {
+        /* Perform an RL rotation */
+        grandchild = bitree_left(right);
+        bitree_left(right) = bitree_right(grandchild);
+        bitree_right(grandchild) = right;
+        bitree_right(*node) = bitree_left(grandchild);
+        bitree_left(grandchild) = *node;
+        
+        AvlNode *dataGrandNode = bitree_data(grandchild);
+        switch (dataGrandNode->factor) {
+            case AVL_LET_HEAVY:
+                dataNode->factor = AVL_BALANCED;
+                dataRightNode->factor = AVL_RGT_HEAVY;
+                break;
+            case AVL_BALANCED:
+                dataNode->factor = AVL_BALANCED;
+                dataRightNode->factor = AVL_BALANCED;
+                break;
+            case AVL_RGT_HEAVY:
+                dataNode->factor = AVL_LET_HEAVY;
+                dataRightNode->factor = AVL_BALANCED;
+                break;
+            default:
+                break;
+        }
+        dataGrandNode->factor = AVL_BALANCED;
+    }
+    return;
+}
+
 /* destroy_left */
 static void destroy_right(BisTree *tree, BiTreeNode *node);
 static void destroy_left(BisTree *tree, BiTreeNode *node)
@@ -68,6 +159,7 @@ static void destroy_right(BisTree *tree, BiTreeNode *node)
     }
     return;
 }
+
 
 /* insert */
 static int insert(BisTree *tree, BiTreeNode **node, const void *data, int *balance)
