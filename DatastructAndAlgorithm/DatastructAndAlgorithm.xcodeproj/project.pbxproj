@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		38099306200C86F2000385A9 /* Heap.c in Sources */ = {isa = PBXBuildFile; fileRef = 38099305200C86F2000385A9 /* Heap.c */; };
 		7BC69991200915FC00D797AC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BC69990200915FC00D797AC /* main.m */; };
 		7BC699AE2009164F00D797AC /* BiTree.c in Sources */ = {isa = PBXBuildFile; fileRef = 7BC699972009164D00D797AC /* BiTree.c */; };
 		7BC699AF2009164F00D797AC /* traverse.c in Sources */ = {isa = PBXBuildFile; fileRef = 7BC699992009164D00D797AC /* traverse.c */; };
@@ -22,6 +23,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		38099304200C86F2000385A9 /* Heap.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Heap.h; sourceTree = "<group>"; };
+		38099305200C86F2000385A9 /* Heap.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = Heap.c; sourceTree = "<group>"; };
 		7BC6997E200915FC00D797AC /* DatastructAndAlgorithm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DatastructAndAlgorithm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7BC69990200915FC00D797AC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		7BC699972009164D00D797AC /* BiTree.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = BiTree.c; sourceTree = "<group>"; };
@@ -95,6 +98,8 @@
 				7BC699972009164D00D797AC /* BiTree.c */,
 				7BC699A02009164E00D797AC /* BiSTree.h */,
 				7BC699AA2009164F00D797AC /* BiSTree.c */,
+				38099304200C86F2000385A9 /* Heap.h */,
+				38099305200C86F2000385A9 /* Heap.c */,
 				7BC69990200915FC00D797AC /* main.m */,
 				7BC699982009164D00D797AC /* example */,
 				7BC699AB2009164F00D797AC /* Info.plist */,
@@ -185,6 +190,7 @@
 				7BC699B82009164F00D797AC /* Queue.c in Sources */,
 				7BC699B32009164F00D797AC /* CPointer.c in Sources */,
 				7BC699AE2009164F00D797AC /* BiTree.c in Sources */,
+				38099306200C86F2000385A9 /* Heap.c in Sources */,
 				7BC69991200915FC00D797AC /* main.m in Sources */,
 				7BC699B02009164F00D797AC /* Stack.c in Sources */,
 				7BC699AF2009164F00D797AC /* traverse.c in Sources */,
