@@ -77,28 +77,27 @@
 		7BC69980200915FC00D797AC /* DatastructAndAlgorithm */ = {
 			isa = PBXGroup;
 			children = (
-				7BC6999C2009164D00D797AC /* Base.lproj */,
-				7BC699AA2009164F00D797AC /* BiSTree.c */,
-				7BC699A02009164E00D797AC /* BiSTree.h */,
-				7BC699972009164D00D797AC /* BiTree.c */,
-				7BC6999D2009164E00D797AC /* BiTree.h */,
-				7BC699AC2009164F00D797AC /* CHTbl.c */,
-				7BC699A52009164E00D797AC /* CHTbl.h */,
-				7BC699A72009164F00D797AC /* CPointer.c */,
 				7BC699A42009164E00D797AC /* CPointer.h */,
+				7BC699A72009164F00D797AC /* CPointer.c */,
+				7BC699A32009164E00D797AC /* LinkList.h */,
+				7BC699A12009164E00D797AC /* LinkList.c */,
+				7BC6999B2009164D00D797AC /* Queue.h */,
+				7BC699AD2009164F00D797AC /* Queue.c */,
+				7BC6999E2009164E00D797AC /* Set.h */,
+				7BC699A62009164E00D797AC /* Set.c */,
+				7BC699A52009164E00D797AC /* CHTbl.h */,
+				7BC699AC2009164F00D797AC /* CHTbl.c */,
+				7BC699A82009164F00D797AC /* OHTbl.h */,
+				7BC699A92009164F00D797AC /* OHTbl.c */,
+				7BC699A22009164E00D797AC /* Stack.h */,
+				7BC6999F2009164E00D797AC /* Stack.c */,
+				7BC6999D2009164E00D797AC /* BiTree.h */,
+				7BC699972009164D00D797AC /* BiTree.c */,
+				7BC699A02009164E00D797AC /* BiSTree.h */,
+				7BC699AA2009164F00D797AC /* BiSTree.c */,
+				7BC69990200915FC00D797AC /* main.m */,
 				7BC699982009164D00D797AC /* example */,
 				7BC699AB2009164F00D797AC /* Info.plist */,
-				7BC699A12009164E00D797AC /* LinkList.c */,
-				7BC699A32009164E00D797AC /* LinkList.h */,
-				7BC699A92009164F00D797AC /* OHTbl.c */,
-				7BC699A82009164F00D797AC /* OHTbl.h */,
-				7BC699AD2009164F00D797AC /* Queue.c */,
-				7BC6999B2009164D00D797AC /* Queue.h */,
-				7BC699A62009164E00D797AC /* Set.c */,
-				7BC6999E2009164E00D797AC /* Set.h */,
-				7BC6999F2009164E00D797AC /* Stack.c */,
-				7BC699A22009164E00D797AC /* Stack.h */,
-				7BC69990200915FC00D797AC /* main.m */,
 			);
 			path = DatastructAndAlgorithm;
 			sourceTree = "<group>";
@@ -110,13 +109,6 @@
 				7BC6999A2009164D00D797AC /* traverse.h */,
 			);
 			path = example;
-			sourceTree = "<group>";
-		};
-		7BC6999C2009164D00D797AC /* Base.lproj */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Base.lproj;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
