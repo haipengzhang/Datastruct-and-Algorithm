@@ -108,7 +108,6 @@
 				7BC699AB2009164F00D797AC /* Info.plist */,
 				7BC69990200915FC00D797AC /* main.m */,
 				7BC699982009164D00D797AC /* example */,
-				7BC6999C2009164D00D797AC /* Base.lproj */,
 			);
 			path = DatastructAndAlgorithm;
 			sourceTree = "<group>";
@@ -120,13 +119,6 @@
 				7BC6999A2009164D00D797AC /* traverse.h */,
 			);
 			path = example;
-			sourceTree = "<group>";
-		};
-		7BC6999C2009164D00D797AC /* Base.lproj */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Base.lproj;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
