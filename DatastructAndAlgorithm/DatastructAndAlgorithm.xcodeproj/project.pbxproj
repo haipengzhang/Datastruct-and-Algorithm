@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		38AFF4B0200F250000B5E6BF /* Graph.c in Sources */ = {isa = PBXBuildFile; fileRef = 38AFF4AF200F250000B5E6BF /* Graph.c */; };
+		38AFF4B3200F6A3200B5E6BF /* bsf.c in Sources */ = {isa = PBXBuildFile; fileRef = 38AFF4B2200F6A3200B5E6BF /* bsf.c */; };
 		7B84965F200CD3C100F68077 /* PQueue.c in Sources */ = {isa = PBXBuildFile; fileRef = 7B84965C200CD3C000F68077 /* PQueue.c */; };
 		7B849660200CD3C100F68077 /* Heap.c in Sources */ = {isa = PBXBuildFile; fileRef = 7B84965D200CD3C000F68077 /* Heap.c */; };
 		7BC69991200915FC00D797AC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BC69990200915FC00D797AC /* main.m */; };
@@ -27,6 +28,8 @@
 /* Begin PBXFileReference section */
 		38AFF4AE200F250000B5E6BF /* Graph.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Graph.h; sourceTree = "<group>"; };
 		38AFF4AF200F250000B5E6BF /* Graph.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = Graph.c; sourceTree = "<group>"; };
+		38AFF4B1200F6A3200B5E6BF /* bsf.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = bsf.h; sourceTree = "<group>"; };
+		38AFF4B2200F6A3200B5E6BF /* bsf.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = bsf.c; sourceTree = "<group>"; };
 		7B84965B200CD3C000F68077 /* Heap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Heap.h; sourceTree = "<group>"; };
 		7B84965C200CD3C000F68077 /* PQueue.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = PQueue.c; sourceTree = "<group>"; };
 		7B84965D200CD3C000F68077 /* Heap.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = Heap.c; sourceTree = "<group>"; };
@@ -120,8 +123,10 @@
 		7BC699982009164D00D797AC /* example */ = {
 			isa = PBXGroup;
 			children = (
-				7BC699992009164D00D797AC /* traverse.c */,
 				7BC6999A2009164D00D797AC /* traverse.h */,
+				7BC699992009164D00D797AC /* traverse.c */,
+				38AFF4B1200F6A3200B5E6BF /* bsf.h */,
+				38AFF4B2200F6A3200B5E6BF /* bsf.c */,
 			);
 			path = example;
 			sourceTree = "<group>";
@@ -201,6 +206,7 @@
 				7BC699B82009164F00D797AC /* Queue.c in Sources */,
 				7BC699B32009164F00D797AC /* CPointer.c in Sources */,
 				7BC699AE2009164F00D797AC /* BiTree.c in Sources */,
+				38AFF4B3200F6A3200B5E6BF /* bsf.c in Sources */,
 				7BC69991200915FC00D797AC /* main.m in Sources */,
 				7BC699B02009164F00D797AC /* Stack.c in Sources */,
 				7BC699AF2009164F00D797AC /* traverse.c in Sources */,
