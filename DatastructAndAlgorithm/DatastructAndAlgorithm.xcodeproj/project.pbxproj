@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		38AFF4B0200F250000B5E6BF /* Graph.c in Sources */ = {isa = PBXBuildFile; fileRef = 38AFF4AF200F250000B5E6BF /* Graph.c */; };
 		7B84965F200CD3C100F68077 /* PQueue.c in Sources */ = {isa = PBXBuildFile; fileRef = 7B84965C200CD3C000F68077 /* PQueue.c */; };
 		7B849660200CD3C100F68077 /* Heap.c in Sources */ = {isa = PBXBuildFile; fileRef = 7B84965D200CD3C000F68077 /* Heap.c */; };
 		7BC69991200915FC00D797AC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BC69990200915FC00D797AC /* main.m */; };
@@ -24,6 +25,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		38AFF4AE200F250000B5E6BF /* Graph.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Graph.h; sourceTree = "<group>"; };
+		38AFF4AF200F250000B5E6BF /* Graph.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = Graph.c; sourceTree = "<group>"; };
 		7B84965B200CD3C000F68077 /* Heap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Heap.h; sourceTree = "<group>"; };
 		7B84965C200CD3C000F68077 /* PQueue.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = PQueue.c; sourceTree = "<group>"; };
 		7B84965D200CD3C000F68077 /* Heap.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = Heap.c; sourceTree = "<group>"; };
@@ -105,6 +108,8 @@
 				7B84965D200CD3C000F68077 /* Heap.c */,
 				7B84965E200CD3C000F68077 /* PQueue.h */,
 				7B84965C200CD3C000F68077 /* PQueue.c */,
+				38AFF4AE200F250000B5E6BF /* Graph.h */,
+				38AFF4AF200F250000B5E6BF /* Graph.c */,
 				7BC699AB2009164F00D797AC /* Info.plist */,
 				7BC69990200915FC00D797AC /* main.m */,
 				7BC699982009164D00D797AC /* example */,
@@ -200,6 +205,7 @@
 				7BC699B02009164F00D797AC /* Stack.c in Sources */,
 				7BC699AF2009164F00D797AC /* traverse.c in Sources */,
 				7BC699B72009164F00D797AC /* CHTbl.c in Sources */,
+				38AFF4B0200F250000B5E6BF /* Graph.c in Sources */,
 				7BC699B52009164F00D797AC /* BiSTree.c in Sources */,
 				7B84965F200CD3C100F68077 /* PQueue.c in Sources */,
 				7BC699B12009164F00D797AC /* LinkList.c in Sources */,
