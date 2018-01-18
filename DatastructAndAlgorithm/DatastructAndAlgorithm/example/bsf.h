@@ -22,7 +22,7 @@ typedef struct BfsVertex_
     int hops;
 }BfsVertex;
 
-/* public interface */
+/* public interface 图里面有adjlists链表，adjlists里面每个元素是一个临界表AdjList和顶点，如果是搜索树顶点时结构体带跳数等 */
 int bfs(Graph *graph, BfsVertex *start, List *hops);
 
 #endif /* bsf_h */
