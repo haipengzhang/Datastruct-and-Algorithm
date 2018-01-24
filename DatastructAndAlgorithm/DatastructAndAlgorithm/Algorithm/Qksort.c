@@ -9,7 +9,7 @@
 #include "Qksort.h"
 #include "Issort.h"
 
-/* O(nlgn) */
+/* O(nlgn)  */
 static int compare_int(const void *int1, const void *int2)
 {
     /* compare two integers */
