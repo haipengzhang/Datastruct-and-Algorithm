@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		38301CB52019BBF6008D57A3 /* Rxsort.c in Sources */ = {isa = PBXBuildFile; fileRef = 38301CB42019BBF6008D57A3 /* Rxsort.c */; };
+		38301CB82019BF75008D57A3 /* Bisearch.c in Sources */ = {isa = PBXBuildFile; fileRef = 38301CB72019BF75008D57A3 /* Bisearch.c */; };
 		38AF05422011F24C00B5E6BF /* LinkList.c in Sources */ = {isa = PBXBuildFile; fileRef = 38AF05282011F24C00B5E6BF /* LinkList.c */; };
 		38AF05432011F24C00B5E6BF /* Heap.c in Sources */ = {isa = PBXBuildFile; fileRef = 38AF05292011F24C00B5E6BF /* Heap.c */; };
 		38AF05442011F24C00B5E6BF /* Stack.c in Sources */ = {isa = PBXBuildFile; fileRef = 38AF052A2011F24C00B5E6BF /* Stack.c */; };
@@ -31,6 +33,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		38301CB32019BBF6008D57A3 /* Rxsort.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Rxsort.h; sourceTree = "<group>"; };
+		38301CB42019BBF6008D57A3 /* Rxsort.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = Rxsort.c; sourceTree = "<group>"; };
+		38301CB62019BF75008D57A3 /* Bisearch.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Bisearch.h; sourceTree = "<group>"; };
+		38301CB72019BF75008D57A3 /* Bisearch.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = Bisearch.c; sourceTree = "<group>"; };
 		38AF05272011F24C00B5E6BF /* OHTbl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OHTbl.h; sourceTree = "<group>"; };
 		38AF05282011F24C00B5E6BF /* LinkList.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = LinkList.c; sourceTree = "<group>"; };
 		38AF05292011F24C00B5E6BF /* Heap.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = Heap.c; sourceTree = "<group>"; };
@@ -88,32 +94,32 @@
 		38AF05262011F24C00B5E6BF /* Datastructure */ = {
 			isa = PBXGroup;
 			children = (
-				38AF05272011F24C00B5E6BF /* OHTbl.h */,
-				38AF05282011F24C00B5E6BF /* LinkList.c */,
-				38AF05292011F24C00B5E6BF /* Heap.c */,
-				38AF052A2011F24C00B5E6BF /* Stack.c */,
-				38AF052B2011F24C00B5E6BF /* CPointer.c */,
-				38AF052C2011F24C00B5E6BF /* PQueue.c */,
-				38AF052D2011F24C00B5E6BF /* BiSTree.h */,
-				38AF052E2011F24C00B5E6BF /* Set.c */,
-				38AF052F2011F24C00B5E6BF /* Queue.c */,
-				38AF05302011F24C00B5E6BF /* Graph.h */,
-				38AF05312011F24C00B5E6BF /* CHTbl.c */,
-				38AF05322011F24C00B5E6BF /* BiTree.h */,
-				38AF05332011F24C00B5E6BF /* OHTbl.c */,
-				38AF05342011F24C00B5E6BF /* main.m */,
-				38AF05352011F24C00B5E6BF /* Stack.h */,
-				38AF05362011F24C00B5E6BF /* LinkList.h */,
-				38AF05372011F24C00B5E6BF /* Heap.h */,
-				38AF05382011F24C00B5E6BF /* PQueue.h */,
-				38AF05392011F24C00B5E6BF /* BiSTree.c */,
 				38AF053A2011F24C00B5E6BF /* CPointer.h */,
-				38AF053B2011F24C00B5E6BF /* Graph.c */,
-				38AF053C2011F24C00B5E6BF /* CHTbl.h */,
-				38AF053D2011F24C00B5E6BF /* BiTree.c */,
-				38AF053E2011F24C00B5E6BF /* Info.plist */,
+				38AF052B2011F24C00B5E6BF /* CPointer.c */,
+				38AF05362011F24C00B5E6BF /* LinkList.h */,
+				38AF05282011F24C00B5E6BF /* LinkList.c */,
 				38AF053F2011F24C00B5E6BF /* Queue.h */,
+				38AF052F2011F24C00B5E6BF /* Queue.c */,
+				38AF05352011F24C00B5E6BF /* Stack.h */,
+				38AF052A2011F24C00B5E6BF /* Stack.c */,
 				38AF05402011F24C00B5E6BF /* Set.h */,
+				38AF052E2011F24C00B5E6BF /* Set.c */,
+				38AF05372011F24C00B5E6BF /* Heap.h */,
+				38AF05292011F24C00B5E6BF /* Heap.c */,
+				38AF053C2011F24C00B5E6BF /* CHTbl.h */,
+				38AF05312011F24C00B5E6BF /* CHTbl.c */,
+				38AF05272011F24C00B5E6BF /* OHTbl.h */,
+				38AF05332011F24C00B5E6BF /* OHTbl.c */,
+				38AF05382011F24C00B5E6BF /* PQueue.h */,
+				38AF052C2011F24C00B5E6BF /* PQueue.c */,
+				38AF05322011F24C00B5E6BF /* BiTree.h */,
+				38AF053D2011F24C00B5E6BF /* BiTree.c */,
+				38AF052D2011F24C00B5E6BF /* BiSTree.h */,
+				38AF05392011F24C00B5E6BF /* BiSTree.c */,
+				38AF05302011F24C00B5E6BF /* Graph.h */,
+				38AF053B2011F24C00B5E6BF /* Graph.c */,
+				38AF05342011F24C00B5E6BF /* main.m */,
+				38AF053E2011F24C00B5E6BF /* Info.plist */,
 			);
 			path = Datastructure;
 			sourceTree = "<group>";
@@ -129,6 +135,10 @@
 				7B84966120137CBB00F68077 /* Mgsort.c */,
 				7B849665201384E400F68077 /* Ctsort.h */,
 				7B849664201384E400F68077 /* Ctsort.c */,
+				38301CB32019BBF6008D57A3 /* Rxsort.h */,
+				38301CB42019BBF6008D57A3 /* Rxsort.c */,
+				38301CB62019BF75008D57A3 /* Bisearch.h */,
+				38301CB72019BF75008D57A3 /* Bisearch.c */,
 			);
 			path = Algorithm;
 			sourceTree = "<group>";
@@ -248,12 +258,14 @@
 				38AF054D2011F24C00B5E6BF /* Graph.c in Sources */,
 				38AF054E2011F24C00B5E6BF /* BiTree.c in Sources */,
 				38AF05432011F24C00B5E6BF /* Heap.c in Sources */,
+				38301CB52019BBF6008D57A3 /* Rxsort.c in Sources */,
 				38AF05552011FA5D00B5E6BF /* Qksort.c in Sources */,
 				7B849666201384E400F68077 /* Ctsort.c in Sources */,
 				3D4C23D92010DECD00C055FE /* dfs.c in Sources */,
 				38AF05422011F24C00B5E6BF /* LinkList.c in Sources */,
 				38AF05482011F24C00B5E6BF /* Queue.c in Sources */,
 				7B84966320137CBB00F68077 /* Mgsort.c in Sources */,
+				38301CB82019BF75008D57A3 /* Bisearch.c in Sources */,
 				38AFF4B3200F6A3200B5E6BF /* bsf.c in Sources */,
 				38AF054C2011F24C00B5E6BF /* BiSTree.c in Sources */,
 				38AF05472011F24C00B5E6BF /* Set.c in Sources */,
