@@ -9,6 +9,7 @@
 #include "Bit.h"
 #include <string.h>
 
+//给定一个字符串二进制序列，取pos位数据，低位在前高位在后（小端模式）
 int bit_get(const unsigned char *bits, int pos)
 {
     unsigned char mask;
