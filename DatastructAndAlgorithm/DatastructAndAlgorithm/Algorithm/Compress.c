@@ -205,6 +205,7 @@ int huffman_compress(const unsigned char *original, unsigned char **compressed, 
     bitree_destroy(tree);
     free(tree);
     /* write the header information */
+    /* 头四个字节存的是符号数量，后面的256个字节存的是频率（all has scaled，could fit into one byte） */
     hsize = sizeof(int) + (UCHAR_MAX + 1);
     if ((comp = (unsigned char *)malloc(hsize)) == NULL) {
         return -1;
