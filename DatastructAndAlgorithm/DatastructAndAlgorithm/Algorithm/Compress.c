@@ -319,4 +319,119 @@ int huffman_uncompress(const unsigned char *compressed, unsigned char **original
     return opos;
 }
 
+/* LZ77 */
+/* compare_win */
+static int compare_win(const unsigned char *window, const unsigned char *buffer, int *offset, unsigned char *next)
+{
+    int match, longest, i, j, k;
+    /* initialize the offset, although it is valid only once a match is found */
+    *offset = 0;
+    /* if no match is found, prepare to return 0 and the next symbol in the look-ahead buffer */
+    longest = 0;
+    *next = buffer[0];
+    /* look for the best match in the look-ahead buffer and sliding window */
+    for (k = 0; k < L7ZZ_WINDOW_SIZE; k++) {
+        i = k;
+        j = 0;
+        match = 0;
+        /* determine how many symbols match in the sliding window at offset k */
+        while (i < L7ZZ_WINDOW_SIZE && j < L7ZZ_BUFFER_SIZE - 1) {
+            if (window[i] != buffer[j]) {
+                break;
+            }
+            match++;
+            i++;
+            j++;
+        }
+        /* keep track of the offset, length, and next symbol for the best match */
+        if (match > longest) {
+            *offset = k;
+            longest = match;
+            *next = buffer[j];
+        }
+    }
+    return longest;
+}
 
+/* lz77_compress */
+int lz77_compress(const unsigned char *original, unsigned char **compressed, int size)
+{
+    unsigned char window[L7ZZ_WINDOW_SIZE], buffer[L7ZZ_BUFFER_SIZE], *comp, *temp, next;
+    int offset, length, remaining, hsize, ipos, opos, tpos, i, token, tbits;
+    /* make the pointer to the compressed data not valid until later */
+    *compressed = NULL;
+    /* write the header information */
+    hsize = sizeof(int);
+    if ((comp = (unsigned char *)malloc(hsize)) == NULL) {
+        return -1;
+    }
+    memcpy(comp, &size, sizeof(int));
+    /* initialize the sliding window and the look-ahead buffer */
+    memset(window, 0, L7ZZ_WINDOW_SIZE);
+    memset(buffer, 0, L7ZZ_BUFFER_SIZE);
+    /* load the look-ahead buffer */
+    ipos = 0;
+    for (i = 0; i < L7ZZ_BUFFER_SIZE && ipos < size; i++) {
+        buffer[i] = original[ipos];
+        ipos++;
+    }
+    /* compress the data */
+    opos = hsize * 8;
+    remaining = size;
+    while (remaining > 0) {
+        if ((length = compare_win(window, buffer, &offset, &next)) != 0) {
+            /* encode a phrase token */
+            token = 0x00000001 << (L7ZZ_PHRASE_BITS - 1);
+            /* set the offset where the match was found in the sliding window */
+            token = token | (offset << (L7ZZ_PHRASE_BITS - L7ZZ_TYPE_BITS - L7ZZ_WINOFF_BITS));
+            /* set the length of the match */
+            token = token | (length << (L7ZZ_PHRASE_BITS - L7ZZ_TYPE_BITS - L7ZZ_WINOFF_BITS - L7ZZ_BUFLEN_BITS));
+            /* set the next symbol in the look-ahead buffer after the match */
+            token = token | next;
+            /* set the number of bits in the token */
+            tbits = L7ZZ_PHRASE_BITS;
+        } else {
+            /* encode a symbol token */
+            token = 0x00000000;
+            /* set the unmatched symbol */
+            token = token | next;
+            /* set the number of bits in the token */
+            tbits = L7ZZ_PHRASE_BITS;
+        }
+        /* ensure that the token is in big-endian format */
+        token = htonl(token);
+        /* write the token to the buffer of compressed data */
+        for (i = 0; i < tbits; i++) {
+            if (opos % 8 == 0) {
+                /* allocate another byte for the buffer of compressed data */
+                if ((temp = (unsigned char *)realloc(comp, (opos / 8) + 1)) == NULL) {
+                    free(comp);
+                    return -1;
+                }
+                comp = temp;
+            }
+            tpos = (sizeof(unsigned long) * 8) - tbits + 1;
+            bit_set(comp, opos, bit_get((unsigned char *)&token, tpos));
+            opos++;
+        }
+        /* adjust the phrase length to account for the unmatched symbol */
+        length++;
+        /* copy data from the look-ahead buffer to the sliding window */
+        memmove(&window[0], &window[length], L7ZZ_WINDOW_SIZE - length);
+        memmove(&window[L7ZZ_WINDOW_SIZE - length], &buffer[0], length);
+        /* read more data into the look-ahead buffer */
+        memmove(&buffer[0], &buffer[length], L7ZZ_BUFFER_SIZE - length);
+        for (i = L7ZZ_BUFFER_SIZE - length; i < L7ZZ_BUFFER_SIZE; i++) {
+            buffer[i] = original[ipos];
+            ipos++;
+        }
+        /* adjust the total symbols remaining by the phrase length */
+        remaining = remaining - length;
+    }
+    /* point to the buffer of compressed data */
+    *compressed = comp;
+    /* return the number of bytes in the compressed data */
+    return ((opos - 1) / 8) + 1;
+}
+
+int lz77_uncompress(const unsigned char *compressed, unsigned char **original);
