@@ -362,7 +362,7 @@ int lz77_compress(const unsigned char *original, unsigned char **compressed, int
     *compressed = NULL;
     /* write the header information */
     hsize = sizeof(int);
-    if ((comp = (unsigned char *)malloc(hsize)) == NULL) {
+    if ((comp  = (unsigned char *)malloc(hsize)) == NULL) {
         return -1;
     }
     memcpy(comp, &size, sizeof(int));
